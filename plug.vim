@@ -982,7 +982,7 @@ function! s:chsh(swap)
   endif
   if a:swap
     if s:is_powershell(&shell)
-      let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s'
+      set shellredir=>%s\ 2>&1
     elseif &shell =~# 'sh' || &shell =~# 'cmd\(\.exe\)\?$'
       set shellredir=>%s\ 2>&1
     endif
